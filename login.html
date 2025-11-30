@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+    </head>
+<body>
+     <div class="container" id="auth-container">
+        
+        <div class="left">
+            <div class="logo">READFLOW</div>
+            
+            <div class="auth-view" id="login-view">
+                <h1>WELCOME</h1>
+                <p>We’re excited to have you here. Our platform is designed to help you focus, discover amazing books, and enjoy a truly immersive reading experience.</p>
+                <form id="login-form">
+                    <input type="email" placeholder="Email" id="email" required />
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" id="password" required />
+                        <span class="toggle-password" id="toggle-password-login"></span>
+                    </div>
+                    <div class="forgot">Forgot password</div>
+                    <button class="login-btn" type="submit">Login</button>
+                </form>
+        
+                <div class="separator">or connect with</div>
+                <div class="social-icons">
+                    <a href="#"><img src="icons/icon/Google.svg" alt="Google" /></a>
+                    <a href="#"><img src="icons/icon/Facebook.svg" alt="Facebook" /></a>
+                    <a href="#"><img src="icons/icon/Microsoft.svg" alt="Microsoft" /></a>
+                </div>
+        
+                <div class="signup">Not have an account? <a href="#signup" id="show-signup-link">Sign Up</a></div>
+            </div>
+
+            <div class="auth-view" id="signup-view">
+                <h1>CREATE ACCOUNT</h1>
+                
+                <form id="signup-form">
+                    
+                    <input type="email" placeholder="Email" id="signup-email" required />
+
+                    <input type="text" placeholder="Username" id="signup-username" required />
+
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" id="signup-password" required />
+                        <span class="toggle-password" id="toggle-password-signup"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Confirm Password" id="confirm-password" required />
+                        <span class="toggle-password" id="toggle-password-confirm"></span>
+                    </div>
+                    
+                    <button class="login-btn yellow" type="submit">Create Account</button>
+                </form>
+        
+                <div class="separator">or connect with</div>
+                <div class="social-icons">
+                    <a href="#"><img src="icons/icon/Google.svg" alt="Google" /></a>
+                    <a href="#"><img src="icons/icon/Facebook.svg" alt="Facebook" /></a>
+                    <a href="#"><img src="icons/icon/Microsoft.svg" alt="Microsoft" /></a>
+                </div>
+        
+                <div class="signup">Have an account? <a href="#login" id="show-login-link">Log in</a></div>
+            </div>
+        </div>
+        
+        <div class="right">
+            <img src="Image/Bird.svg" alt="Mascot" class="mascot" id="login-mascot" />
+            
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

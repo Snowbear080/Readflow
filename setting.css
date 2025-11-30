@@ -1,0 +1,148 @@
+/* --- Styles for setting.css --- */
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+.setting-header {
+    margin-bottom: 20px;
+}
+.setting-header h2 {
+    font-family: 'Bungee';
+    font-size: 28px;
+    color: #284062;
+}
+.setting-header p {
+    font-size: 16px;
+    color: #9CA6B7;
+}
+
+.card-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 15px;
+}
+
+.card-title-container img {
+    width: 32px;
+    height: 32px;
+}
+
+.setting-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    
+    /* ‼️ (เพิ่ม) เพื่อจัดช่องว่างระหว่าง Title กับ Rows ‼️ */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.setting-card h3 {
+    font-family: 'Bungee';
+    font-size: 20px;
+    font-weight: bold;
+    color: #284062;
+    text-transform: uppercase;
+    margin-bottom: 0; 
+    padding-bottom: 0;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F7F9; /* (สีเทาอ่อน) */
+    padding: 16px; /* (เพิ่ม padding รอบด้าน) */
+    border-radius: 8px; /* (ขอบโค้งมน) */
+}
+
+
+.setting-row strong {
+    font-size: 16px;
+    color: #284062;
+    font-weight: bold;
+}
+.setting-row p {
+    font-size: 14px;
+    color: #9CA6B7;
+    margin-top: 4px;
+}
+
+.language-display {
+    font-size: 14px;
+    font-weight: bold;
+    color: #284062;
+}
+
+/* (ปุ่มลิงก์ เช่น "Edit", "Change") */
+.btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* (ปุ่ม Log out) */
+.btn-outline {
+    background: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-outline:hover {
+    border-color: #6fb5ff;
+    color: #6fb5ff;
+}
+
+/* --- (สไตล์สำหรับปุ่ม Toggle) --- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #D1D5DB;
+  transition: .2s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .2s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #284062;
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}

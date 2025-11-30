@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins/Poppins-Regular.ttf'); 
+    font-weight: 500;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
+}
+
+#signup-view,
+#signup-mascot {
+  display: none;
+}
+
+/* 2. เมื่อ .signup-mode ทำงาน: ซ่อนหน้า Login */
+.container.signup-mode #login-view,
+.container.signup-mode #login-mascot {
+  display: none;
+}
+
+/* 3. เมื่อ .signup-mode ทำงาน: แสดงหน้า Sign Up */
+.container.signup-mode #signup-view,
+.container.signup-mode #signup-mascot {
+  display: block;
+}
+
+/* 4. สไตล์สำหรับปุ่มสีเหลือง (ตามรูป) */
+.login-btn.yellow {
+  background-color: #F7B801; /* (สีเหลือง) */
+  color: #1E3A5F; /* (สีตัวอักษร) */
+  /* (และสไตล์อื่นๆ ของปุ่มเดิม) */
+}
+
+/* (คุณอาจจะต้องปรับแต่งสไตล์ .auth-view เพิ่มเติม) */
+.auth-view {
+  width: 100%;
+}
+
+body {
+
+  display: flex;
+  background-color: #fff;
+  color: #2C3E50;
+}
+
+.container {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.left,.right{
+    margin: 60px 40px;
+}
+
+
+.left {
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+}
+
+.logo {
+  font-family: 'Bungee';
+  color: #284062;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Bungee';
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: #284062;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1;
+}
+
+p {
+  
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+input {
+  padding: 15px;
+  width: 400px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #999;
+}
+
+.forgot {
+
+  font-size: 12px;
+  width: 400px;
+  color: #999;
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+button.login-btn {
+  padding: 15px;
+  width: 400px;
+  border: none;
+  background-color: #F7B801;
+  border: 2px solid #303030;
+  border-width: 2px 2px 4px 2px;  
+  color: #303030;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.separator {
+  text-align: center;
+  margin: 20px 0;
+  color: #303030;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icons a {
+  background-color: #284062;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.signup {
+  text-align: center;
+  font-size: 14px
+  
+}
+
+.signup a {
+  color: #4B68A1;
+  text-decoration: none;
+}
+
+.right {  
+  width: 500px;
+  background-color: #627EA7;
+  border: 2px solid #284062;
+  display: flex;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  max-width: 80%;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .left {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+   
+  }
+}
+
+
+
+
+
+
+
+

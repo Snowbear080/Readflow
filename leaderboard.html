@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - ReadFlow</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Sidebar/sidebar.css">
+    
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main">
+        <main class="main-content">
+            
+            <section class="leaderboard-card">
+                <h2>LEADERBOARD</h2>
+                <p>Top 20 readers based on total time spent.</p>
+                
+                <ol class="leaderboard-list" id="leaderboard-list">
+                    <li>Loading...</li>
+                </ol>
+            </section>
+
+        </main>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="leaderboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReadFlow</title>
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="Sidebar/sidebar.css">
+  <link rel="stylesheet" href="FocusOverlay/focusOverlay.css">
+
+</head>
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar-placeholder"></div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <main class="main-content">
+        <!-- 1. Welcome Section -->
+        <section class="welcome-card">
+            <div class="welcome-content">
+              <div class="welcome-text">
+                <h3>WELCOME TO READFLOW</h3>
+                <p>LET’S START IT TOGETHER</p>
+              </div>
+              <button class="guide-btn">
+                GUIDEBOOK
+                <img src="icons/Navigation Icon/Book.svg" alt="Book Icon" />
+              </button>
+            </div>
+        </section>
+
+         <!-- 2. Stats -->
+        <section class="stats">
+             <div class="profile-left">
+                <div class="profile-header">
+                    <div class="profile-picture"></div>
+                    <div class="user-details">
+                        <h2 class="ID">MR.FLOW</h2>
+                        <p class="handle">@flowy</p>
+                    </div>
+                </div>
+                <div class="stats-section">
+                    <div class="stat-item" id="xp-stats">
+                        <span class="stat-label" id="xp-level">Level 1</span>
+                        <div class="stat-value"> <span id="xp-progress">0 / 0 XP</span></div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Reading Time</span>
+                        <div class="stat-value"><span id="reading-time-value">0 min</span></div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label" id="gems-label">My Gems</span>
+                        <div class="stat-value">
+                          <span id="gems-value">0</span>
+                          <img src="icons/icon/Gem-blue.svg" class="stat-icon" alt="Gems"> </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Rank</span>
+                        <div class="stat-value"><span id="rank-value">Unranked</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator-container">
+                <div class="separator-line"></div>
+            </div>
+            <div class="profile-right">
+                <div class="character-container">
+                    <img src="Image/Bird-book.svg" alt="Character" class="character-img">
+                </div>
+            </div>   
+        </section>
+
+
+        <!-- 3. Start Button -->
+        <section class="start-section">
+            <button class="start-btn">Start Focus Now</button>
+        </section>
+
+        
+        <!-- 4. Reading Progress -->
+        <section class="reading-station">
+            <h2>READING STATION</h2>
+            <div class="journey-map">
+              <h3>JOURNEY MAP</h3>
+              <p>Total Time: 0 minutes</p>
+
+              <div class="timeline">
+                
+                <div class="milestone start" data-time="0">
+                  <button class="start-btn2">START</button>
+                  <div class="icon"><img src="icons/icon/Star-yellow.svg" alt="Star Icon"/></div>
+                </div>
+
+                <div class="milestone" data-time="15">
+                  <div class="icon"><img src="icons/icon/Flower_yellow.svg" alt="Flower Icon"/></div>
+                  <span class="timeR">15 MIN</span>
+                </div>
+
+                <div class="milestone" data-time="30">
+                  <img src="Image/Bird-book2.svg" alt="Penguin" class="penguin1">
+                  <div class="icon"><img src="icons/icon/Flower_yellow.svg" alt="Flower Icon"/></div>
+                  <span class="timeR">30 MIN</span>
+                </div>
+
+                <div class="milestone" data-time="45">
+                  <div class="chest"><img src="icons/icon/Chest.svg" alt="Chest Icon"/></div>
+                  <span class="timeR">45 MIN</span>
+                </div>
+
+                <div class="milestone" data-time="60">
+                  <span class="timeL">60 MIN</span>
+                  <div class="icon"><img src="icons/icon/Flower_yellow.svg" alt="Flower Icon"/></div>
+                </div>
+
+                <div class="milestone" data-time="90">
+                  <span class="timeL">90 MIN</span>
+                  <div class="icon"><img src="icons/icon/Flower_yellow.svg" alt="Flower Icon"/></div>
+                  <img src="Image/Bird-book.svg" alt="Penguin" class="penguin2">
+                </div>
+
+                <div class="milestone" data-time="120">
+                  <span class="timeL">120 MIN</span>
+                  <div class="chest"><img src="icons/icon/Chest.svg" alt="Chest Icon"/></div>
+                </div>
+
+                <div class="milestone" data-time="150">
+                  <div class="icon"><img src="icons/icon/Flag_yellow.svg" alt="Flower Icon"/></div>
+                  <span class="timeR">150 MIN</span>
+                </div>
+
+              </div>
+              <button class="next-map">NEXT MAP</button>     
+            </div>
+        </section>
+    </main>    
+    
+
+    <!-- Rightbar -->
+    <aside class="rightbar">
+
+      <!-- Progress -->
+      <div class="card">
+        <div class="card-container">
+          <h3>YOUR PROGRESS</h3>
+              <div class="book-image">
+                <img src="icons/Illustation Image/Book.svg" alt="Book Cover">
+              </div>
+          <p> The name of your book</p>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <div class="stat-item">
+            <span class="label">Progress</span>
+            <span class="value">0%</span>
+          </div> 
+          <div class="button-read"> 
+            <button class="start-btn2">Add Book</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Daily Quests -->
+      <div class="card">
+          <div class="header">
+            <h3> Daily Quests</h3>
+            <a href="#" class="see-all">See All</a>
+          </div>
+        <!-- Achievements 1 -->
+          <div class="wrapper-item">
+            <div class="achievement-icon red">
+              <img src="icons/icon/Fire.svg" alt="Login Icon" />
+            </div>
+            <div class="achievement-text">
+              <div class="achievement-title">Login 7 Days</div>
+              <div class="achievement-progress-bar">
+                <div class="progress-fill1" style="width: 14.28%"></div>
+              </div>
+              <div class="stat-item">
+                <span class="label">1/7</span>
+                <span class="value">14.28%</span>
+              </div>
+            </div>
+            <button class="achievement-btn">RECEIVE</button>
+          </div>
+        <!-- Achievements 2 -->
+          <div class="wrapper-item">
+            <div class="achievement-icon blue">
+              <img src="icons/icon/Clock_Quest.svg" alt="time Icon" />
+            </div>
+            <div class="achievement-text">
+              <div class="achievement-title">Reading time 10 hr.</div>
+              <div class="achievement-progress-bar">
+                <div class="progress-fill2" style="width: 0%" ></div>
+              </div>
+              <div class="stat-item">
+                <span class="label">0/10</span>
+                <span class="value">0%</span>
+              </div>
+            </div>
+            <button class="achievement-btn">RECEIVE</button>
+          </div>
+        <!-- Achievements 3 -->
+          <div class="wrapper-item">
+            <div class="achievement-icon green">
+              <img src="icons/icon/Book_Quest.svg" alt="book Icon" />
+            </div>
+            <div class="achievement-text">
+              <div class="achievement-title">Read 5 books</div>
+              <div class="achievement-progress-bar">
+                <div class="progress-fill3"  style="width: 10%"></div>
+              </div>
+              <div class="stat-item">
+                <span class="label">1/5</span>
+                <span class="value">20%</span>
+              </div>
+            </div>
+            <button class="achievement-btn">RECEIVE</button>
+          </div>
+      </div>
+      <!-- Leaderboards -->
+      <section class="card">
+        <div class="header">
+          <h3>LEADERBOARDS</h3>
+          <a href="#" class="see-all">See All</a>
+        </div>
+        
+          <div class="wrapper-item">
+            <img src="icons/icon/Gold Coin.svg" alt="Rank Icon" class="gold-icon" />
+            <img src="icons/icon/Jennifer.svg" alt="User 1" class="avatar" />
+            <span class="username">Jennifer H.</span>
+            <span class="points">102 HR.</span>
+          </div>
+      
+          <div class="wrapper-item">
+            <img src="icons/icon/Sliver Coin.svg" alt="Rank Icon" class="sliver-icon" />
+            <img src="icons/icon/William.svg" alt="User 2" class="avatar" />
+            <span class="username">William D.</span>
+            <span class="points">95 HR.</span>
+          </div>
+      
+          <div class="wrapper-item">
+            <img src="icons/icon/Bronze Coin.svg" alt="Rank Icon" class="bronze-icon" />
+            <img src="icons/icon/Joseph.svg" alt="User 3" class="avatar" />
+            <span class="username">Joseph P.</span>
+            <span class="points">85 HR.</span>
+          </div>
+      </section>
+      <!-- Trending-blogs-->
+      <section class="card">
+            <div class="header">
+              <h3 class="section-title2">Trending Blogs</h3>
+              <a href="#" class="see-all">See All</a>
+            </div>
+        
+            <!-- Post 1 -->
+            <div class="wrapper-c">
+              <div class="user-info">
+                <img src="icons/icon/Jennifer.svg" alt="User Avatar" class="avatar" />
+                <div class="user-meta">
+                  <p class="username">JENNIFER</p>
+                  <p class="date">7 days ago</p>
+                </div>
+              </div>
+              <p class="blog-message">What are you reading? What do you recommend? What do you want to read?</p>
+              <div class="blog-reactions">
+                <div class="reaction-pill">
+                  100<img src="icons/icon/Heart-new.svg" alt="Like" />
+                </div>
+                <div class="reaction-pill">
+                  30<img src="icons/icon/Comment.svg" alt="Comment" />
+                </div>
+                <div class="reaction-pill">
+                  1.5k<img src="icons/icon/Eye.svg" alt="watch" />
+                </div>
+              </div> 
+            </div>
+            
+            <!-- Post 2 -->
+            <div class="wrapper-c">
+              <div class="user-info">
+                <img src="icons/icon/Joseph.svg" alt="User Avatar" class="avatar" />
+                <div class="user-meta">
+                  <p class="username">JOSEPH</p>
+                  <p class="date">5 days ago</p>
+                </div>
+              </div>
+              <p class="blog-message">What is, in your opinion, a perfect book for a beginner?</p>
+              <div class="blog-reactions">
+                <div class="reaction-pill">
+                  80<img src="icons/icon/Heart-new.svg" alt="Like" />
+                </div>
+                <div class="reaction-pill">
+                  17<img src="icons/icon/Comment.svg" alt="Comment" />
+                </div>
+                <div class="reaction-pill">
+                  1K<img src="icons/icon/Eye.svg" alt="watch" />
+                </div>
+              </div>
+            </div>
+        
+            <!-- Post 3 -->
+            <div class="wrapper-c">
+              <div class="user-info">
+                <img src="icons/icon/William.svg" alt="User Avatar" class="avatar" />
+                <div class="user-meta">
+                  <p class="username">WILLIAM</p>
+                  <p class="date">4 days ago</p>
+                </div>
+              </div>
+              <p class="blog-message">“Design Lessons from Unexpected Places: Insights from Classic Literature”</p>
+              <div class="blog-reactions">
+                <div class="reaction-pill">
+                  50<img src="icons/icon/Heart-new.svg" alt="Like" />
+                </div>
+                <div class="reaction-pill">
+                  7<img src="icons/icon/Comment.svg" alt="Comment" />
+                </div>
+                <div class="reaction-pill">
+                  800<img src="icons/icon/Eye.svg" alt="watch" />
+                </div>
+              </div>
+            </div>
+      </section>
+
+      <!-- Premium-membership -->
+      <section class="card">
+        <div class="header">
+          <h3>PREMIUM MEMBERSHIP</h3>
+        </div>
+        <div class ="wrapper-c" >
+          <p class="description">
+            Sign up to unlock new features and, Remove Add.
+          </p>
+          <button class="premium-btn">
+            UPGRADE <img src="icons/icon/Certificate.svg" alt="check icon" />
+          </button>
+        </div>
+      </section>    
+    </aside>
+  </main>
+  <div id="focus-overlay-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script> 
+  <script src="FocusOverlay/focusOverlay.js"></script>    
+  <script src="script.js"></script>
+  <script src="Sidebar/global.js" defer></script>
+</body>
+</html>

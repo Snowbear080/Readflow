@@ -1,0 +1,359 @@
+/* --- Styles for mybook.css --- */
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins/Poppins-Regular.ttf'); 
+    font-weight: 500;
+}
+/* 1. Layout */
+.user-book-section {
+    padding-top: 20px;
+}
+.book-list.my-book-list {
+    /* (ใช้ 5 คอลัมน์เหมือน Library) */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.section-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.book-limit-status {
+    font-size: 14px;
+    color: #888;
+}
+
+/* 2. Create Card (The Red Box Trigger) */
+.book-card.create-card {
+    background: #fff;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%; /* ให้ยืดเท่ากับการ์ดอื่นๆ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    min-height: 300px;
+}
+.create-card .create-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #EDF0F4;
+    font-size: 36px;
+    color: #284062;
+    margin-bottom: 10px;
+}
+.create-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* 3. New Book Modal Styles */
+.new-book-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+.new-book-overlay.show {
+    display: flex;
+}
+.new-book-modal {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 25px;
+    border-bottom: 2px solid #ddd;
+}
+.modal-header h2 {
+    font-family: "Bungee";
+    font-size: 24px;
+    color: #284062;
+    margin: 0;
+}
+.cancel-btn, .create-btn {
+    padding: 10px;
+    display: flex;
+    width: 120px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cancel-btn { background: #fff; border: 2px solid #ccc; color: #555; }
+.create-btn { background: linear-gradient(135deg, #284062, #5283C8); border: 2px solid #284062; color: white; }
+
+/* 4. Modal Content Layout */
+.modal-content {
+    display: flex;
+    padding: 25px;
+    gap: 30px;
+}
+.modal-cover-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.modal-detail-column {
+    flex: 1.5;
+}
+.modal-detail-column label {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 4px;
+}
+.modal-detail-column input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* 5. Cover Upload & Template */
+.cover-upload-area {
+    padding: 25px;
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.cover-preview {
+    max-width: 60%;
+    max-height: 100%;
+    border: 2px solid #284062;
+    object-fit: contain;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+.template-section {
+    width: 100%;
+}
+.template-section h4 {
+    font-family: "bungee";
+    font-size: 24px;
+    color: #284062;
+    margin-bottom: 10px;
+}
+.template-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+.template-card {
+    width: 50px;
+    height: 70px;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+.template-card.import-card {
+    border: 2px dashed #ccc;
+    background: #f9f9f9;
+    font-size: 14px;
+    line-height: 1.2;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.template-card.template-active {
+    border-color: #284062;
+}
+
+/* 6. Public/Private Toggle */
+.public-toggle-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    
+}
+/* (สไตล์ Switch จากหน้า Setting) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .2s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .2s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #284062;
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* 7. Progress Bar Styles (for rendered books) */
+.book-card .progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+.book-card .progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, #284062,#5283C8);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+.book-card .progress-text {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* New layout: left count and right percent on same row */
+.book-card .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.book-card .progress-count {
+    font-size: 12px;
+    color: #555;
+}
+.book-card .progress-percent {
+    font-size: 12px;
+    color: #9aa0a6;
+}
+.book-card .delete-book-btn {
+    background: none;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 8. Responsive Adjustments */
+@media (max-width: 992px) {
+    .book-list.my-book-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .new-book-modal {
+        max-width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .book-list.my-book-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .new-book-modal {
+        max-width: 90%;
+    }
+    .modal-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .modal-cover-column {
+        width: 100%;
+    }
+    .cover-upload-area {
+        width: 50%;
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+    .cover-preview {
+    max-width: 100%;
+    max-height: 200px;
+    border: 2px solid #284062;
+    object-fit: contain;
+    margin: 20px 0;
+    border-radius: 8px;
+    }
+}

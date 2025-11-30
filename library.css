@@ -1,0 +1,444 @@
+/* --- 1. Global & Fonts --- */
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins/Poppins-Regular.ttf'); 
+    font-weight: 500;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+body {
+  display: flex;
+  background: #F9FAFB;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+a:hover {
+  color: #000;
+}
+
+/* --- 2. Layout --- */
+.main {
+  flex: 1;
+  display: flex;
+  margin-left: 250px; /* (ความกว้าง Sidebar) */
+  padding: 20px 150px; /* (ลด Padding ด้านข้างลง) */
+  gap: 20px;
+  flex-direction: column;
+}
+
+/* --- 3. Header (Search) --- */
+.header {
+  display: flex;
+  margin-bottom: 10px;
+}
+.search-container {
+    position: relative;
+    flex-grow: 1; /* (ให้มันยืดเต็ม) */
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    z-index: 3; /* ensure icon sits above background but input text is padded */
+    cursor: pointer;
+}
+
+.search-suggestions {
+    display: none; /* (ซ่อนไว้เป็นค่าเริ่มต้น) */
+    position: absolute;
+    top: 100%; /* (อยู่ใต้ Search Bar พอดี) */
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
+    max-height: 300px;
+    overflow-y: auto;
+}
+/* (เมื่อ JS สั่ง "เปิด") */
+.search-suggestions.active {
+    display: block;
+}
+
+/* 3. ‼️ (เพิ่ม) สไตล์ของ "คำแนะนำ" แต่ละอัน ‼️ */
+.suggestion-item {
+    padding: 12px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+.suggestion-item strong {
+    color: #284062; /* (ไฮไลท์ชื่อหนังสือ) */
+}
+.suggestion-item span {
+    color: #777; /* (สีชื่อผู้แต่ง) */
+    font-size: 12px;
+}
+
+.topbar {
+  display: flex;
+  flex: 1;
+  gap: 15px;
+  align-items: center;
+}
+.topbar input {
+  width: 100%;
+  flex-grow: 1;
+  padding: 14px 14px 14px 48px; /* reserve space on the left for the search icon */
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.filter-dropdown {
+  padding: 14px 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.wishlist-btn {
+  padding: 14px 14px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+
+}
+.wishlist-btn img {
+    width: 20px;
+    height: 20px;
+    align-items: center;
+}
+
+.back-btn {
+    padding: 14px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px; /* วงกลม */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0; /* ห้ามหด */
+}
+.back-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- 4. Category --- */
+.category h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.section-header h2 {
+  font-family: "Bungee";
+  font-size: 24px;
+  color: #284062;
+    
+}
+.section-header h3 {
+  font-family: "Bungee";
+  font-size: 24px;
+  color: #284062;
+}
+.category-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* (เผื่อบนจอเล็ก) */
+}
+.category-tabs button {
+  flex-direction: column;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 2px solid #9CA6B7;
+  border-radius: 12px;
+  background: #EDF0F4;
+  cursor: pointer;
+  display: flex;
+  align-items: left;
+  text-align: left;
+  gap: 4px;
+  font-size: 14px;
+}
+.category-tabs button img {
+    width: 24px;
+    height: 24px;
+}
+.category-tabs button.active {
+  background: linear-gradient(135deg, #284062, #5283C8);
+  border: 2px solid #284062;
+  color: #fff;
+}
+
+.category-tabs button:nth-child(n + 7) {
+    display: none !important;
+}
+
+.category-tabs.show-all button:nth-child(n + 7) {
+    display: flex !important;
+}
+
+
+/* --- 5. Book Section --- */
+.book-section {
+  margin-bottom: 20px;
+}
+
+/* (นี่คือดีไซน์ "Popular" ที่มีพื้นหลังสีเหลือง) */
+.book-section.popular {
+    background-color: #ffcb47;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.book-list {
+  display: grid;
+  /* (5-column grid) */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+}
+/* (ดีไซน์ "For You" ใช้ 2 แถว) */
+.book-list.for-you-list {
+    grid-template-rows: auto auto;
+}
+
+.book-card {
+  background: #fff;
+  border: 2px solid #e4e7eb;
+  border-radius: 8px;
+  text-align: left;
+  /* (ลบ padding บน/ล่าง ออก) */
+  padding: 0; 
+  overflow: hidden; /* (กันรูปทะลุ) */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.book-card:hover{
+  transform: scale(1.05);
+}
+
+.book-card-placeholder {
+  padding: 40px 10px;
+  text-align: center;
+  color: #999;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%; /* (กำหนดความสูงปก) */
+  object-fit: cover;
+  background-color: #eee;
+}
+.book-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* (ยืดให้เต็ม) */
+}
+.book-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 4px;
+}
+.book-author {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+.book-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* (ดันลงล่างสุด) */
+}
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* (ระยะห่างระหว่าง "ตัวเลข" กับ "ดาว") */
+}
+
+.rating-score {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+}
+
+.rating-stars {
+    display: flex; /* (ทำให้ <img> ดาว 5 ดวงเรียงกัน) */
+    align-items: center;
+}
+
+/* (นี่คือสไตล์สำหรับรูปดาวที่คุณเพิ่มเข้ามา) */
+.rating-stars img {
+    width: 14px;  /* (ปรับขนาดดาวได้ตามชอบ) */
+    height: 14px; /* (ปรับขนาดดาวได้ตามชอบ) */
+}
+
+.book-fav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #aaa;
+}
+
+.book-fav-btn img {
+  width: 20px;  /* (ปรับขนาดไอคอนหัวใจของคุณ) */
+  height: 20px; /* (ปรับขนาดไอคอนหัวใจของคุณ) */
+  transition: transform 0.2s ease;
+}
+
+.book-fav-btn:hover img {
+    transform: scale(1.2); /* (เพิ่ม effect ตอน hover) */
+}
+
+/* --- 6. Pagination --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.page-link {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.page-link.active,
+.page-link:hover {
+    background: #284062;
+    color: #fff;
+    border-color: #284062;
+}
+.page-link.disabled {
+    color: #ccc;
+    background: #f9f9f9;
+}
+.page-dots {
+    color: #aaa;
+    padding: 0 5px;
+}
+
+/* --- 7. Responsive --- */
+
+/* --- 6.5. Layout-shift fixes --- */
+/*
+  Prevent layout shifts on page load when a child component is wider than
+  the flex container. Common causes: images or long unbroken text in a
+  flex item. The rules below:
+  - allow flex children to shrink (min-width: 0)
+  - constrain large media to the container (max-width:100%)
+  - reserve scrollbar gutter to avoid shifts when scrollbar appears
+*/
+
+html {
+  scrollbar-gutter: stable;
+}
+
+.main > * {
+  min-width: 0; /* allow flex children to shrink instead of forcing layout grow */
+}
+
+/* Ensure common wide elements don't force horizontal overflow */
+img, iframe, video, embed, object {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* For long words or long strings (e.g. long URLs) inside flex children */
+.main, .book-list, .book-card, .for-you-list {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* If some component still overflows, allow internal scrolling instead
+   of pushing the whole layout */
+.main {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1200px) {
+    .category-tabs {
+        /* ‼️ เปลี่ยนเป็น 6 คอลัมน์ ‼️ */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .book-list {
+        /* (เปลี่ยนเป็น 4 คอลัมน์) */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 992px) { /* (Tablet) */
+    .main {
+        margin-left: 0; /* (Sidebar หายไป) */
+        padding: 20px;
+    }
+    .category-tabs {
+        /* ‼️ เปลี่ยนเป็น 6 คอลัมน์ ‼️ */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .book-list {
+        /* (เปลี่ยนเป็น 3 คอลัมน์) */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 576px) { /* (Mobile) */
+    .book-list {
+        /* (เปลี่ยนเป็น 2 คอลัมน์) */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .category-tabs {
+        /* ‼️ เปลี่ยนเป็น 6 คอลัมน์ ‼️ */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .topbar {
+        flex-wrap: wrap; /* (ปุ่ม Filter ตกบรรทัด) */
+    }
+    .topbar input {
+        flex-basis: 100%; /* (Searchbar เต็ม) */
+    }
+}

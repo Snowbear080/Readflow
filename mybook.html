@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book - ReadFlow</title>
+    
+    <link rel="stylesheet" href="library.css"> 
+    <link rel="stylesheet" href="Sidebar/sidebar.css">
+    <link rel="stylesheet" href="mybook.css">
+    <link rel="stylesheet" href="FocusOverlay/focusOverlay.css">
+</head>
+<body>
+   <div id="sidebar-placeholder"></div>
+
+   <main class="main">
+      <header class="header">
+        <div class="topbar">
+          <div class="search-container">
+          
+            <input type="text" id="search-input" placeholder="Search My Books...">
+            <img src="icons/icon/search.svg" class="search-icon" alt="Search">
+
+            <div class="search-suggestions" id="search-suggestions">
+              </div>
+            </div>
+          
+            <select class="filter-dropdown">
+              <option value="all">Filter</option>
+              <option value="rating">By Rating</option>
+              <option value="price">By Price</option>
+            </select>
+        </div>
+        </div>
+      </header>
+
+      <section class="user-book-section">
+        <div class="section-header">
+          <h2>MY BOOKS</h2>
+          <p class="book-limit-status">0/10 Books</p>
+        </div>
+        <div class="book-list my-book-list" id="user-book-list">
+          
+          <div class="book-card create-card" id="new-book-trigger">
+            <span class="create-icon">+</span>
+            <p>Create New Book</p>
+          </div>
+
+          <div class="book-card-placeholder">Loading your books...</div>
+        </div>
+      </section>
+      
+    </main>
+
+    <!-- Focus Overlay Placeholder (injected by focusOverlay.js) -->
+    <div id="focus-overlay-placeholder"></div>
+
+    <div class="new-book-overlay" id="new-book-overlay">
+        <div class="new-book-modal">
+            <div class="modal-header">
+                <button class="cancel-btn" id="modal-cancel" type="button">CANCEL</button>
+                <h2>NEW BOOK</h2>
+                <button class="create-btn" id="modal-create" type="submit" form="new-book-form">CREATE</button>
+            </div>
+            
+            <form id="new-book-form">
+                <div class="modal-content">
+                    
+                    <div class="modal-cover-column">
+                        <label class="cover-upload-area" id="cover-upload-area">
+                            <p>Cover</p>
+                            <img src="Image/cover1.png" alt="Book Cover" class="cover-preview" id="cover-preview">
+                            <p>Upload</p>
+                            <input type="file" id="cover-file-input" accept="image/*" style="display: none;">
+                        </label>
+                        
+                        <div class="template-section">
+                            <h4>TEMPLATE</h4>
+                            <div class="template-grid">
+                                <div class="template-card import-card" id="import-url-trigger">+</div>
+                                <div class="template-card template-active" data-template-url="Image/cover1.png"></div>
+                                <div class="template-card" data-template-url="image/cover2.png"></div>
+                                <div class="template-card" data-template-url="image/cover3.png"></div>
+                                <div class="template-card" data-template-url="image/cover4.png"></div>
+                                <div class="template-card" data-template-url="image/cover5.png"></div>
+                                <div class="template-card" data-template-url="image/cover6.png"></div>
+      
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-detail-column">
+                        <label>Name</label>
+                        <input type="text" name="title" id="book-title-input" required>
+                        
+                        <label>How many pages of your book</label>
+                        <input type="number" name="pages" id="book-pages-input" required min="1">
+
+                        <label>Privacy setting</label>
+                        <label class="public-toggle-row">
+                            <p>You want this book private</p>
+                            <label class="switch">
+                                <input type="checkbox" name="private" id="book-private-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </label>  
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="FocusOverlay/focusOverlay.js"></script>
+    <script src="mybook.js"></script>
+</body>
+</html>

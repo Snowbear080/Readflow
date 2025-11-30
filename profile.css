@@ -1,0 +1,410 @@
+/* --- Global & Fonts --- */
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins/Poppins-Regular.ttf'); 
+    font-weight: 500;
+}
+
+/* --- Layout --- */
+.profile-layout {
+    font-family: 'Poppins';
+    display: flex;
+    gap: 30px; /* ระยะห่างระหว่างซ้าย-ขวา */
+    padding: 20px 150px;
+}
+
+/* --- Left Column --- */
+.profile-content {
+    flex: 1.75; /* (กว้าง 2 ส่วน) */
+    min-width: 0; /* กัน Grid ล้น */
+}
+
+/* --- Right Column --- */
+.rightbar {
+    flex: 1; /* (กว้าง 1 ส่วน) */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ==========================
+   LEFT COLUMN STYLES
+   ========================== */
+
+/* 1. Header Profile Card */
+.header-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+}
+
+.cover-image {
+    height: 200px;
+    width: 110%;
+    background-color: #e0e7f0; /* สีเทาถ้าไม่มีรูป */
+}
+.cover-image img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.profile-info-container {
+    padding: 0 20px 20px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-avatar-circle {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: -60px; /* ดันขึ้นไปทับ Cover */
+    left: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.profile-avatar-circle img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.edit-profile-btn {
+    position: absolute;
+    top: 20px; right: 30px;
+    background: #284062;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: 'Bungee';
+    cursor: pointer;
+}
+
+.profile-text {
+    margin-top: 70px; /* เว้นที่ให้ Avatar */
+}
+.name-row {
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    justify-self: start;
+}
+.username {
+    font-family: 'Bungee';
+    font-size: 24px;
+    color: #284062;
+    margin: 0;
+}
+.verify-badge { width: 32px; height: 32px; }
+
+.handle { color: #888; font-size: 14px; margin: 4px 0; }
+
+.follow-stats {
+    
+    font-size: 14px;
+    color: #555;
+}
+.follow-stats span { margin-right: 15px; }
+.follow-stats b { color: #284062; }
+
+.bio {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.profile-tags {
+    display: flex; gap: 10px; flex-wrap: wrap;
+}
+.profile-tags span {
+    background: #fff;
+    border: 1px solid #284062;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    
+    color: #284062  ;
+}
+
+/* Section Title */
+.section-title {
+  font-family: 'Bungee', sans-serif;
+  color: #284062;
+  font-size: 20px; /* Adjust as needed */
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Statistics Grid Container */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 15px; /* Space between boxes */
+  margin-bottom: 30px;
+}
+
+/* Individual Stat Box */
+.stat-box {
+  position: relative;
+  border-radius: 12px; /* Rounded corners */
+  padding: 20px;
+  height: 100px; /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff; /* White text for all boxes */
+  overflow: hidden; /* To clip any overflowing content */
+  
+}
+
+/* Stat Box Colors (Gradients) */
+.stat-box.blue {
+  background: linear-gradient(135deg, #84CFE5 0%, #28578B 100%);
+  border: 2px solid #284062;
+  box-shadow: 0 2px 0px #284062;
+}
+
+.stat-box.purple {
+  background: linear-gradient(135deg, #877DE1 0%, #461AFD 100%);
+  border: 2px solid #2E316F;
+  box-shadow: 0 2px 0px #2E316F;
+}
+
+.stat-box.yellow {
+  background: linear-gradient(135deg, #FFDA6D 0%, #FFAA1D 100%);
+  border: 2px solid #BE7E00;
+  box-shadow: 0 2px 0px #BE7E00;
+}
+
+.stat-box.green {
+  background: linear-gradient(135deg, #D5ED4E 0%, #32BA3E 100%);
+  border: 2px solid #63910F;
+  box-shadow: 0 2px 0px #63910F;
+}
+/* Override text color for green box if needed based on your image */
+
+
+
+/* Icon Styling */
+.stat-icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 24px;
+  height: 24px;
+}
+
+.stat-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  /* If icons are black and need to be white, use filter */
+  /* filter: brightness(0) invert(1); */ 
+}
+/* Exception for green box icon if text is dark */
+/* .stat-box.green .stat-icon img { filter: none; } */
+
+
+/* Content Styling (Number and Label) */
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center;
+  height: 100%;
+  margin-left: 20px; /* Offset to avoid overlapping with icon if needed */
+}
+
+.stat-number {
+  font-family: 'Bungee', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.stat-label {
+   
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+/* Adjustments for specific layout from image: Number centered, Label bottom right */
+/* If you want the number centered and label at bottom right like the image implies for some layouts */
+.stat-box {
+    /* Reset flex for specific positioning */
+    display: block; 
+}
+
+.stat-number {
+    position: absolute;
+    left: 90px;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.stat-label {
+    position: absolute;
+    bottom: 20px;
+    left:  80px;
+    text-align: right;
+    width: auto;
+}
+
+/* 4. Achievement List */
+.achievement-list {
+    border: 2px solid #284062;
+    border-radius: 16px;
+    padding: 20px;
+    background: #fff;
+}
+
+.achievement-item {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #284062;
+}
+.achievement-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.ach-icon-blue, .ach-icon-yollow, .ach-icon-green, .ach-icon-pirple {
+    width: 60px; height: 60px;
+    background: #F0F4F8;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.ach-icon-blue { background: linear-gradient(135deg, #84CFE5 0%, #28578B 100%); }
+.ach-icon-yollow { background: linear-gradient(135deg, #FFDA6D 0%, #FFAA1D 100%);}       
+.ach-icon-green { background: linear-gradient(135deg, #D5ED4E 0%, #32BA3E 100%); }
+.ach-icon-pirple { background: linear-gradient(135deg, #877DE1 0%, #461AFD 100%);}
+
+
+.ach-icon-blue img { width: 40px; height: 40px;}
+
+
+.ach-info { flex: 1; }
+
+.ach-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 5px;
+}
+.ach-header h3 { font-family: 'Bungee'; font-size: 16px; color: #284062; margin: 0; }
+.ach-progress-text { font-size: 12px; color: #888; font-weight: bold; }
+
+.ach-info p { font-size: 12px; color: #555; margin-bottom: 8px; margin-top: 0; }
+
+.progress-bar {
+    width: 100%; height: 10px; background: #eee; border-radius: 4px; overflow: hidden;
+}
+.fill { height: 100%; border-radius: 4px 0 0 4px ; }
+.fill.blue { background: linear-gradient(135deg, #84CFE5 0%, #28578B 100%); }
+.fill.yellow { background: linear-gradient(135deg, #FFDA6D 0%, #FFAA1D 100%);}
+.fill.green { background: linear-gradient(135deg, #D5ED4E 0%, #32BA3E 100%); }
+.fill.purple { background: linear-gradient(135deg, #877DE1 0%, #461AFD 100%);}
+
+
+
+/* ==========================
+   RIGHT COLUMN STYLES
+   ========================== */
+
+/* 1. Daily Stats Card */
+.daily-stats-card {
+    background: #fff;
+    border: 2px solid #284062;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.d-stat { display: flex; align-items: center; gap: 8px; font-weight: bold; color: #284062; }
+.d-stat img { width: 40px; height: 40px; }
+.d-stat span { font-size: 16px;  font-family: 'bungee'; }
+
+
+/* 2. Friends Widget */
+.friends-widget {
+    background: #fff;
+    border: 2px solid #284062;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.fw-tabs { display: flex; border-bottom: 1px solid #eee; }
+.fw-tab {
+    flex: 1; padding: 12px; border: none; background: #fff;
+    font-family: 'Bungee'; color: #ccc; cursor: pointer;
+}
+.fw-tab.active { color: #5F98D1; border-bottom: 3px solid #5F98D1; }
+
+.fw-content { padding: 15px; }
+.fw-user {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 15px;
+}
+.fw-avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; }
+.fw-info strong { display: block; font-size: 13px; color: #284062; font-family: 'Bungee'; }
+.fw-info span { font-size: 12px; color: #777; }
+
+
+/* 3. Widget Card (General) */
+.widget-card {
+    background: #fff;
+    border: 2px solid #284062; /* หรือ #284062 ตามดีไซน์ */
+    border-radius: 16px;
+    padding: 15px;
+}
+.widget-card h3 {
+    font-family: 'Bungee'; font-size: 20px; color: #284062;
+    margin-top: 0; margin-bottom: 15px;
+}
+
+.search-btn-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px;
+    background: #fff; border: 2px solid #ddd; border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px; color: #555; cursor: pointer;
+}
+
+.search-btn-row img {
+    width: 30px; height: 30px;
+}
+
+.suggest-user {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 15px;
+}
+.su-info { flex: 1; }
+.su-info strong { display: block; font-size: 13px; color: #284062; }
+.su-info span { font-size: 11px; color: #888; }
+
+.follow-btn {
+    background: #284062; color: #fff; border: none;
+    padding: 10px 16px; border-radius: 6px;
+    font-size: 10px; font-weight: bold; cursor: pointer;
+}
+.see-more-link {
+    display: block; text-align: left; font-size: 12px; color: #5F98D1; font-weight: bold; margin-top: 10px; text-decoration: none;  
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .profile-layout { flex-direction: column; }
+    .rightbar { max-width: 100%; }
+}

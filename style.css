@@ -1,0 +1,779 @@
+/* Reset */
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins/Poppins-Regular.ttf'); 
+    font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+body {
+  display: flex;
+  background: #F9FAFB;
+  color: #333;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  display: flex;
+  margin-left: 250px;
+  padding: 20px 150px;
+  gap: 30px;
+}
+
+.main-content {
+  flex: 1.75;  
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Welcome Card */
+  .welcome-card {
+    background: #657EA3;
+    border: 2px solid #284062;
+    padding: 20px;
+    border-radius: 16px;   
+  }
+
+  .welcome-btn-container {
+    display: flex;
+    justify-content: flex-end; 
+  }
+
+  .welcome-card h3 {  
+    font-family: 'Bungee';  
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  .welcome-card p {
+    color: #ffffff;
+    font-size: 14px;
+  }
+
+  .welcome-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .welcome-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .guide-btn {
+    background-color: #657EA3;
+    color: white;
+    padding: 5px 16px;
+    border: 2px solid #284062;
+    border-width: 2px 2px 4px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .start-btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+/* 2. Stats */
+.stats {
+  display: flex;
+  gap: 15px;
+  border: 2px solid #284062;
+  background: linear-gradient(135deg, #284062, #5283C8);
+  color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allows this section to grow */
+    padding-right: 20px; /* Add some space before the separator */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #ffffff66;
+}
+
+.user-details .ID {
+    font-family: 'Bungee';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user-details .handle {
+    margin: 0;
+    font-size: 14px;
+    color: #ffffffb3;
+}
+
+.stats-section {
+    display: grid; /* Grid is perfect for the stats list */
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+  
+    font-size: 14px;
+    color: #ffffffcc;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stats-section .stat-value {
+    display: flex; /* ‼️ (สำคัญ) ทำให้ข้อความกับไอคอนเรียงกัน ‼️ */
+    align-items: center; /* (จัดกลางแนวตั้ง) */
+    gap: 8px; /* ‼️ (ระยะห่างระหว่างข้อความกับไอคอน) ‼️ */
+    
+    /* (สไตล์เดิมของคุณ - ถ้ามี) */
+    font-weight: bold; 
+    justify-content: flex-end; /* (ถ้าอยากให้ชิดขวา) */
+}
+
+.stats-section .stat-icon {
+    width: 18px;  /* (ปรับขนาดไอคอนได้) */
+    height: 18px; /* (ปรับขนาดไอคอนได้) */
+}
+
+.separator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px; /* Space around the separator */
+}
+
+.separator-line {
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent, #ffffff4d 20%, #ffffff4d 80%, transparent);
+}
+
+.profile-right {
+    flex-shrink: 0; /* Prevents this section from shrinking */
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Aligns content to the bottom */
+}
+
+.character-container {
+    position: relative; /* This is the only place we use position: relative, to contain the stars */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.character-img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+}
+
+/* 3. Start Button */
+.start-section {
+  display: flex;
+  text-align: center;
+  
+}
+.start-btn {
+  font-family: 'Bungee';
+  width: 100%;
+  background: linear-gradient(135deg, #FFD867, #FFA710);
+  border: 2px solid #BE7E00;
+  padding: 25px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+}
+.start-btn:hover {
+  background: linear-gradient(35deg, #FFE1E1, #8F8CF4,#86B8FF);
+  border: 2px solid #7d6fae;
+}
+
+/* 4. Reading Progress */
+.reading-station {
+  background: #284062;
+  border: 2px solid #1e2a47;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.reading-station h2 {
+  font-family: 'Bungee';
+  color: white;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.journey-map {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.journey-map h3 {
+  font-size: 20px;
+  padding: 16px 0;
+}
+
+.journey-map p {
+  font-size: 16px;
+  margin-bottom: 40px ;
+}
+
+.timeline .milestone {
+  position: relative;
+  /* (CSS ของ milestone ที่คุณมีอยู่แล้ว) */
+}
+
+/* 2. ‼️ โลจิก Grayscale ใหม่ ‼️ */
+/* (ยกเว้น .start) ไอคอนทั้งหมดจะเป็นสีเทาในตอนแรก */
+/* (เราจะสั่ง grayscale ที่ตัว .icon/.chest) */
+.timeline .milestone:not(.start) .icon,
+.timeline .milestone:not(.start) .chest {
+  filter: grayscale(100%);
+  opacity: 1; /* ทำให้จางลงเล็กน้อย (ปรับได้) */
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* 3. ‼️ โลจิก Active ใหม่ ‼️ */
+/* (เมื่อ JavaScript เพิ่ม .active) */
+.timeline .milestone.active .icon,
+.timeline .milestone.active .chest {
+  filter: grayscale(0%); /* ‼️ สีกลับมา ‼️ */
+  opacity: 1;
+}
+
+/* 4. สร้าง "แทร็กสีเทา" (::before) ใต้ไอคอน */
+.timeline .milestone:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  width: 8px; /* ความหนาของเส้น (ปรับได้) */
+  height: 100px; 
+  background-color: #E0E0E0; /* สีเทา (สีแทร็ก) */
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0; /* อยู่หลัง */
+}
+
+/* 5. สร้าง "แถบสีเหลือง" (::after) ใต้ไอคอน */
+.timeline .milestone:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  width: 8px; /* ความหนาเท่ากัน */
+  
+  /* ‼️ ความสูงถูกควบคุมโดย JavaScript ‼️ */
+  height: var(--fill-percentage, 0%); 
+  
+  background-color: #F8D47A; /* ‼️ สีเหลือง */
+  
+  /* ‼️ อยู่ "ใต้" ไอคอน (Top) ‼️ */
+  top: calc(100% + 10px); 
+  
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* อยู่หน้า */
+  transition: height 0.5s ease;
+}
+
+.milestone {
+  position: relative;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.milestone .icon {
+  width: 80px;
+  height: 70px;
+  background: #F8D47A;;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 0 #D6A30D;;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer; 
+}
+
+.milestone .icon img{
+  width: 48px;
+  height: 48px;
+}
+
+.milestone .chest{
+  width: 77px;
+  height: 70px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 0 #9CA6B7;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer; 
+}
+
+.chest img{
+  width: 77px;
+  height: 70px;
+}
+
+.milestone.start .icon {
+  background: #FFD867;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 0 #D6A30D;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+
+.icon:active {
+  box-shadow: none;           
+  transform: translateY(10px); 
+}
+
+.milestone.start .icon:active , .chest:active {
+  box-shadow: none;           
+  transform: translateY(10px); 
+}
+
+.milestone .timeR {
+  position: absolute;
+  right: 100px;
+  background: #fff;
+  border: 2px solid #1e2a47;
+  border-width: 2px 2px 4px 2px;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #1e2a47;
+}
+
+.milestone .timeL {
+  position: absolute;
+  left: 100px;
+  background: #fff;
+  border: 2px solid #1e2a47;
+  border-width: 2px 2px 4px 2px;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #1e2a47;
+}
+
+.milestone.start .start-btn2 {
+  position: absolute;
+  left: 100px;
+  background: #FFD867;
+  border: 2px solid #BE7E00;
+  border-width: 2px 2px 4px 2px;
+  color: #BE7E00;
+  border-radius: 6px;;  
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.penguin1{
+  position: absolute;
+  left: 60px;
+}
+
+.penguin2{
+  position: absolute;
+  right: 60px;
+}
+
+.next-map {
+  margin-bottom: 16px;
+  background: #1e2a47;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Rightbar */
+.rightbar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Reading Progress */
+.card {
+  display: flex;
+  background: #E6E9EE;
+  border: 2px solid #284062;
+  padding: 16px;
+  border-radius: 16px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-container{
+  background-color: #ffffff;
+  padding: 12px 36px;
+  border-radius: 12px;
+}
+
+.card-container h3 {
+  font-family: 'Bungee';
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #284062;
+}
+
+.book-image{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.book-image img{
+  width: 120px;
+  height: auto;
+}
+
+.card-container p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.card-container .stat-item{
+  font-size: 14px;
+  color: #AAB3C0;
+  margin-bottom: 16px;
+}
+
+.button-read{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-btn2{  
+  font-size: 16px;
+  color: #284062;
+  padding: 14px 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #284062;
+  border-width: 2px 2px 4px 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-btn2:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(135deg, #284062, #5283C8);
+  width: 0%;
+}
+
+/* Achievement */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h3 {
+  font-family: 'Bungee';
+  font-size: 20px;
+  color: #284062;
+}
+
+.header .see-all {
+  font-size: 14px;
+  color: #4886e1;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+.wrapper-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.achievement-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red {
+  background: linear-gradient(225deg, #FFDB79, #FF3A3A);
+}
+
+.blue {
+  background: linear-gradient(225deg, #7ec2ef, #3271d1);
+}
+
+.green {
+  background: linear-gradient(225deg, #28B83C, #9BC853);
+}
+
+.achievement-text{
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: 14px;
+  color: #3D3D3D;
+  margin-bottom: 4px;
+}
+  
+.achievement-progress-bar{
+  width: 100%;
+  height: 8px;
+  background-color: #E6E9EE;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+  
+.progress-fill1 {
+  height: 100%;
+  background-color: #FF3A3A;
+  transition: width 0.3s ease;
+}
+
+.progress-fill2 {
+  height: 100%;
+  background-color: #6396d8;
+  transition: width 0.3s ease;
+}
+
+.progress-fill3 {
+  width: 10%;
+  height: 100%;
+  background-color: #43d563;
+  transition: width 0.3s ease;
+}
+
+.wrapper-item .stat-item{
+  font-size: 12px;
+  color: #AAB3C0;
+}
+
+.achievement-btn {
+  background-color: #ffffff;
+  border: 2px solid #284062;
+  border-width: 2px 2px 4px 2px;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 12px;
+  color: #284062;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+  
+.achievement-btn:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+/* Trending Blog*/
+
+.wrapper-c {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar img{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.user-meta{
+  margin-left: 12px;
+}
+
+.user-meta .username {
+  font-size: 14px;
+  color: #284062;
+}
+  
+.user-meta .date {
+  font-size: 12px;
+  color: #4886e1;
+}
+  
+.blog-message {
+  font-size: 12px;
+  color: #333;
+  margin: 12px 0;
+}
+  
+.blog-reactions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+} 
+
+.reaction-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #E6E9EE;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #284062;
+}
+  
+.reaction-pill img {
+  width: 14px;
+  height: 14px;
+}
+
+/* Leaderboards */
+.username{
+  flex: 1;
+  color: #284062;
+  font-size: 14px;
+}
+
+.points{
+  color: #4886e1;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Premium-membership */
+
+.description {
+  font-size: 14px;
+  color: #284062;
+  margin-bottom: 12px;
+}
+
+.premium-btn {
+  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(64deg, #18417A, #6DCEE5,#5283C8);
+  color: white;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+  
+.premium-btn img {
+  width: 24px;
+  height: 24px;
+}
+  
+/* Optional pressing animation */
+.premium-btn:active {
+  transform: scale(0.96);
+}
+
+body.overlay-active {
+  overflow: hidden;
+}
+

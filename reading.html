@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Mode</title>
+  <link rel="stylesheet" href="reading.css">
+  <link rel="stylesheet" href="FocusOverlay/focusOverlay.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+</head>
+<body>
+
+  <div class="reading-container">
+    <div class="timer-display1" id="countdown-timer">25:00</div>
+    <div class="character-area">
+      </div>
+    <button class="pause-btn" id="pause-btn">PAUSE</button>
+  </div>
+
+  <div class="pause-overlay" id="pause-overlay">
+    <div class="pause-menu">
+      <h2>PAUSE</h2>
+      <button class="menu-btn" id="continue-btn">Continue</button>
+      <button class="menu-btn" id="settings-btn">Setting</button>
+      <button class="menu-btn" id="leave-btn">Leave</button>
+    </div>
+  </div>
+
+ <div class="summary-overlay" id="summary-overlay">
+    <div class="summary-modal">
+      
+      <img src="Image/Bird-book.svg" class="summary-character summary-anim-item" alt="Good Job Character">
+      
+      <h2 class="summary-title summary-anim-item" id="summary-title">Mission Complete!</h2>
+
+      <div class="summary-box summary-anim-item">
+        <div class="summary-box-title">SUMMARY</div>
+        
+        <div class="summary-row summary-anim-item">
+          <img src="icons/icon/Clock-purple.svg" class="summary-icon" alt="Time">
+          <span class="summary-value" id="summary-time">0 MINUTE</span>
+        </div>
+        
+        <div class="summary-row summary-anim-item" id="summary-pages-row" style="display: none;">
+          <img src="icons/icon/Book.svg" class="summary-icon" alt="Pages">
+          <span class="summary-value" id="summary-pages">0 PAGES</span>
+        </div>
+        
+        <div class="summary-row summary-anim-item">
+          <img src="icons/icon/XP.svg" class="summary-icon" alt="XP">
+          <span class="summary-value" id="summary-xp">0 XP</span>
+        </div>
+        
+        <div class="summary-row summary-anim-item">
+          <img src="icons/icon/Gem-blue.svg" class="summary-icon" alt="Gems">
+          <span class="summary-value" id="summary-gems">0 GEMS</span>
+        </div>
+      </div>
+
+      <div class="summary-buttons-container summary-anim-item">
+        <button class="summary-btn redo-btn" id="redo-button">REDO</button>
+        <button class="summary-btn continue-btn" id="continue-summary-btn">CONTINUE</button>
+      </div>
+      <div id="focus-overlay-placeholder"></div>
+    </div>
+  </div>
+  
+  <div class="volume-overlay" id="volume-overlay">
+        <div class="volume-modal">
+            <h2>SETTING</h2>
+            
+            <div class="volume-control-row">
+                <img src="icons/icon/volume.svg" id="volume-icon" alt="Sound">
+                
+                <input type="range" id="volume-slider" min="0" max="100" value="50">
+            </div>
+
+            <div class="volume-buttons">
+                <button class="vol-btn back" id="volume-back-btn">BACK</button>
+                <button class="vol-btn save" id="volume-save-btn">SAVE</button>
+            </div>
+        </div>
+    </div>
+  
+  <script src="FocusOverlay/focusOverlay.js"></script>
+  <script src="reading.js"></script>
+</body>
+</html>

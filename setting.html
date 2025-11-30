@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Setting - ReadFlow</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Sidebar/sidebar.css">
+    <link rel="stylesheet" href="setting.css">
+    
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main">
+        <main class="main-content">
+            
+            <div class="setting-header">
+                <h2>ACCOUNT SETTING</h2>
+                <p>Manage your account preferences and reading experience</p>
+            </div>
+
+            <section class="setting-card">
+                <div class="card-title-container">
+                    <img src="icons/icon/Bell.svg" alt="bell"> <h3>NOTIFICATIONS</h3>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Push Notifications</strong>
+                        <p>Receive notifications on your device</p>
+                    </div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Reading Reminders</strong>
+                        <p>Daily reminders to keep your reading streak</p>
+                    </div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Weekly Reports</strong>
+                        <p>Weekly summary of your reading progress</p>
+                    </div>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Community Updates</strong>
+                        <p>Updates from friends and community</p>
+                    </div>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+            </section>
+
+            <section class="setting-card">
+                <div class="card-title-container">
+                    <img src="icons/icon/Appearance.svg" alt=""> <h3>APPEARANCE</h3>
+                </div>
+                 <div class="setting-row">
+                    <div>
+                        <strong>Dark Mode</strong>
+                        <p>Switch between light and dark themes</p>
+                    </div>
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                </div>
+                 <div class="setting-row">
+                    <div>
+                        <strong>Sound Effects</strong>
+                        <p>Enable sounds for achievements and actions</p>
+                    </div>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                 <div class="setting-row">
+                    <div>
+                        <strong>Language</strong>
+                        <p>Choose language</p>
+                    </div>
+                    <span class="language-display">EN</span>
+                </div>
+            </section>
+
+            <section class="setting-card">
+                <div class="card-title-container">
+                    <img src="icons/icon/User.svg" alt=""> <h3>ACCOUNT</h3>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Profile Information</strong>
+                        <p>Update or change your profile details</p>
+                    </div>
+                    <button class="btn-link">Edit</button>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Email Address</strong>
+                        <p>Update your email address</p>
+                    </div>
+                    <button class="btn-link">Update</button>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Password</strong>
+                        <p>Change your Password</p>
+                    </div>
+                    <button class="btn-link">Change</button>
+                </div>
+            </section>
+
+            <section class="setting-card">
+                <div class="card-title-container">
+                    <img src="icons/icon/Privacy.svg" alt=""> <h3>PRIVACY & SECURITY</h3>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Privacy Settings</strong>
+                        <p>Control who can see your activity</p>
+                    </div>
+                    <button class="btn-link">Manage</button>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Blocked Users</strong>
+                        <p>Manage blocked users (Unavailable)</p>
+                    </div>
+                    <button class="btn-link">View</button>
+                </div>
+            </section>
+
+            <section class="setting-card log-out-card">
+                <div class="card-title-container">
+                     <img src="icons/icon/Log-out.svg" alt=""> <h3>LOG OUT</h3>
+                </div>
+                <div class="setting-row">
+                    <div>
+                        <strong>Log out</strong>
+                        <p>Sign out from the account</p>
+                    </div>
+                    <button class="btn-outline" id="logout-button">Log out</button>
+                </div>
+            </section>
+        
+        </main>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="setting.js"></script>
+</body>
+</html>

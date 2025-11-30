@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail - ReadFlow</title>
+    
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="Sidebar/sidebar.css">
+    <link rel="stylesheet" href="library.css"> <link rel="stylesheet" href="book-detail.css"> </head>
+<body>
+   <div id="sidebar-placeholder"></div>
+
+   <main class="main">
+      <header class="header">
+        <div class="topbar-detail">
+            <a href="library.html" class="back-btn">
+              <img src="icons/icon/arrow-left.svg" alt="Back"> 
+            </a>
+            <div class="search-container">
+                <img src="icons/icon/search.svg" class="search-icon" alt="Search"> <input type="text" placeholder="Search..." class="detail-search" id="detail-search-input" autocomplete="off">
+                <div class="search-suggestions" id="detail-search-suggestions"></div>
+            </div>
+            <button class="wishlist-btn" id="detail-wishlist-btn"><img src="icons/icon/heart.svg" alt=""></button>
+        </div>
+      </header>
+      
+      <section class="book-detail-layout">
+        
+        <div class="detail-cover-col">
+            <div class="cover-bg-circle"></div>
+            <img src="" alt="Book Cover" id="book-cover-img" class="book-cover-main">
+        </div>
+
+        <div class="detail-info-col">
+            <h1 id="book-title">Loading title...</h1>
+            <p class="author" id="book-author">by Author</p>
+            
+            <div class="genre-tags" id="genre-tags-list">
+                </div>
+            
+            <p class="description" id="book-description">Loading description...</p>
+            
+            <div class="info-box-container">
+                <div class="info-box">
+                    <span>REVIEW</span>
+                    <strong id="rating-box">0.0</strong>
+                </div>
+                 <div class="info-box">
+                    <span>PRICE</span>
+                    <strong id="price-box" class="free">FREE 0$</strong>
+                </div>
+            </div>
+
+            <div class="btn-container">
+              <button class="add-to-book-btn" id="add-to-my-book-btn">
+                  ADD TO MY BOOK
+              </button>
+              <button class="like-btn" id="detail-wishlist-btn">
+                <img src="icons/icon/heart.svg" alt="">
+              </button>
+            </div>
+        </div>
+      </section>
+
+      <section class="book-section">
+        <div class="section-header">
+          <h3>YOU MAY LIKE</h3>
+        </div>
+        <div class="book-list" id="recommendations-list">
+          <div class="book-card-placeholder">Loading...</div>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="book-detail.js"></script>
+</body>
+</html>

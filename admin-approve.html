@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Approval - ReadFlow</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Sidebar/sidebar.css">
+    <link rel="stylesheet" href="admin.css"> </head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main admin-layout">
+        <header class="admin-header">
+            <h2>ADMIN DASHBOARD</h2>
+            <p>Review and manage user posts</p>
+        </header>
+
+        <div class="admin-container">
+            <section class="pending-list-section">
+                <div class="section-header">
+                    <h3>PENDING POSTS (<span id="pending-count">0</span>)</h3>
+                    <button id="refresh-btn" class="icon-btn">↻</button>
+                </div>
+                <div id="pending-list" class="scrollable-list">
+                    <div class="placeholder">Loading...</div>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <div id="preview-content" class="preview-box hidden">
+                    <div class="preview-header">
+                        <div class="user-info">
+                            <div class="avatar-small"></div>
+                            <div>
+                                <strong id="preview-username">Username</strong>
+                                <span id="preview-date">Date</span>
+                            </div>
+                        </div>
+                        <span class="status-badge pending">Pending</span>
+                    </div>
+                    
+                    <div class="preview-body">
+                        <p id="preview-text">Select a post to preview...</p>
+                        <div id="preview-tags" class="tags-container"></div>
+                    </div>
+
+                    <div class="action-bar">
+                        <button id="reject-btn" class="btn-reject">✕ REJECT</button>
+                        <button id="approve-btn" class="btn-approve">✓ APPROVE</button>
+                    </div>
+                </div>
+                
+                <div id="empty-state" class="empty-state">
+                    <p>Select a post from the left to review.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="admin.js"></script>
+</body>
+</html>

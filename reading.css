@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins/Poppins-Regular.ttf'); 
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins';
+}
+
+.reading-container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.timer-display1 {
+  display: flex;
+  background-color: white;
+  border: 4px solid #284062;
+  border-radius: 16px;
+  box-shadow: 0 2px 0px #284062;
+  justify-content: center;
+  font-size: 64px;
+  color: #284062;
+  font-weight: bold;
+  min-width: 300px;
+  min-height: 80px;
+}
+
+.pause-btn {
+  font-family: "Bungee";
+  background-color: white;
+  border: 4px solid #284062;
+  color: #284062;
+  border-radius: 12px;
+ 
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 0px #284062;
+  min-width: 200px;
+  min-height: 70px;
+  margin-bottom: 40px;
+}
+
+/* --- สไตล์ของ Pause Overlay --- */
+
+.pause-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none; /* ซ่อนไว้ */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pause-overlay.show {
+  display: flex; /* แสดงผลเมื่อมีคลาส .show */
+}
+
+.pause-menu {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 300px;
+}
+
+.pause-menu h2 {
+  font-family: "Bungee";
+  color: #284062;
+  font-size: 28px;
+}
+
+.menu-btn {
+  font-family: "Poppins";
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #284062;
+  border: 2px solid #284062;
+  box-shadow: 0 2px 0px #284062;
+}
+
+.menu-btn:hover {
+  background-color: #E6E9EE; /* สีแดงสำหรับปุ่ม Leave */
+}
+
+/* --- Volume Overlay Styles --- */
+.volume-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 4000; /* (สูงกว่าทุกอย่าง แต่ต่ำกว่า Cursor) */
+}
+.volume-overlay.show {
+    display: flex;
+}
+
+.volume-modal {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.volume-modal h2 {
+    font-family: 'Bungee';
+    color: #284062;
+    font-size: 24px;
+    margin-bottom: 30px;
+    
+}
+
+.volume-control-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#volume-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+#volume-slider {
+
+    
+    flex-grow: 1;
+    cursor: pointer;
+    /* (คุณอาจจะแต่ง Slider เพิ่มเติมได้) */
+}
+
+.volume-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.vol-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'bungee';
+    cursor: pointer;
+}
+.vol-btn.back {
+    background: #fff;
+    border: 2px solid #284062;
+    color: #284062;
+}
+.vol-btn.save {
+    background: linear-gradient(135deg, #284062, #5283C8);
+    border: 2px solid #284062; 
+    color: #fff;
+}
+
+/* --- สไตล์ของ Summary Overlay --- */
+
+.summary-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* พื้นหลังสีขาวทึบ */
+  display: none; /* ซ่อนไว้ */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.summary-overlay.show {
+  display: flex; 
+}
+
+.summary-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.summary-character {
+  width: 300px; 
+  height: auto; 
+}
+
+.summary-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #284062;
+  margin-bottom: 30px;
+  /* (ฟอนต์ Bungee ถ้าคุณต้องการ) font-family: 'Bungee', sans-serif; */
+}
+
+/* (กล่องสีม่วง) */
+.summary-box {
+  width: 450px;
+  background: linear-gradient(35deg, #3077FB, #8F8CF4,#86B8FF);
+  border-radius: 16px;
+  padding: 0px 6px;
+  margin-bottom: 30px;
+}
+
+.summary-box-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 6px 0px;
+  color: #fff;
+  text-align: center; 
+}
+
+/* (แถวข้อมูล (Time, XP, Gems)) */
+.summary-row {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  padding: 16px;
+  justify-content: space-between;
+}
+
+.summary-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.summary-value {
+  font-size: 16px;
+  color: #284062;
+}
+.summary-buttons-container {
+  display: flex;
+  gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+  width: 320px;
+}
+
+/* (ปุ่ม Continue) */
+/* --- สไตล์ของปุ่ม (ใหม่) --- */
+
+/* (ตัวหุ้มปุ่ม) */
+.summary-buttons-container {
+  display: flex;
+  gap: 15px; /* ระยะห่างระหว่างปุ่ม */
+  width: 466px; /* (ความกว้างเท่า .summary-box) */
+  
+  /* (ปรับความกว้างสำหรับจอเล็ก ที่เราเคยทำ) */
+  @media (max-width: 380px) {
+    width: 90%;
+    flex-direction: column-reverse; /* (กลับปุ่ม Continue/Redo บนมือถือ) */
+  }
+}
+
+/* (สไตล์ปุ่มที่ "ใช้ร่วมกัน") */
+.summary-btn {
+  flex: 1; /* (แบ่งครึ่งความกว้าง) */
+  font-weight: bold;
+  padding: 18px 15px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid #284062;
+  border-bottom: 3px solid #284062;
+  
+  @media (max-width: 380px) {
+    width: 100%;
+  }
+}
+
+/* (สไตล์ปุ่ม Continue - สีทึบ) */
+.summary-btn.continue-btn {
+  background: linear-gradient(35deg, #FFE1E1, #8F8CF4,#86B8FF);
+  border: none;
+  border-bottom: 3px solid #8375B3;
+  color: #fff;
+}
+.summary-btn.continue-btn:hover {
+  background: #8F8CF4;
+}
+
+/* (สไตล์ปุ่ม Redo - สีโปร่ง) */
+.summary-btn.redo-btn {
+  background-color: #fff;
+  color: #284062;
+}
+.summary-btn.redo-btn:hover {
+  background-color: #ebedf0;
+}
+/* --- ‼️ ส่วน Responsive สำหรับจอเล็ก ‼️ --- */
+
+/* (เราจะใช้ 380px เป็นจุดตัด เพื่อให้มีที่ว่างข้างๆ 320px) */
+@media (max-width: 380px) {
+  
+  /* 1. เมื่อจอเล็กกว่า 380px... */
+  
+  .summary-modal {
+    /* (ปรับ padding ให้น้อยลงนิดหน่อย) */
+    padding: 0px;
+  }
+
+  .summary-character {
+    /* (ลดขนาดตัวละครลง) */
+    width: 300px; 
+  }
+  
+  .summary-box {
+    /* ‼️ (สำคัญ) เปลี่ยนจาก "กว้าง 320px" 
+       เป็น "กว้าง 90% ของหน้าจอ" ‼️ */
+    width: 90%;
+  }
+
+}
+
+/* --- Summary Animation (Mission Complete Effect) --- */
+/* 1. สถานะเริ่มต้น (ซ่อนและอยู่ต่ำลงไปข้างล่าง) */
+.summary-anim-item {
+    opacity: 0;
+    transform: translateY(30px); /* ดันลงไปข้างล่าง 30px */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เด้งดึ๋งๆ (Bouncy) */
+}
+
+/* 2. สถานะแสดงผล (โผล่ขึ้นมาที่เดิม) */
+.summary-anim-item.slide-up {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - ReadFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Sidebar/sidebar.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main">
+        <main class="main-content">
+
+            <div class="blog-search-bar">
+                <img src="icons/icMr. Tinyon/search.svg" class="search-icon" alt="Search">
+                <input type="text" id="blog-search-input" placeholder="Search blogs, tags, or people...">
+            </div>
+
+            <section class="create-post-trigger" id="create-post-btn">
+                <div class="user-avatar-small" id="current-user-avatar"></div>
+                <input type="text" placeholder="Do you want to share something?" readonly>
+                <button class="create-btn-small">CREATE</button>
+            </section>
+
+            <section class="top-blogs-section">
+                <h3>TOP 5 BLOGS OF THE WEEK</h3>
+                <div id="top-blogs-list">
+                    <div class="loading-placeholder">Loading top posts...</div>
+                </div>
+            </section>
+
+            <section class="feed-section">
+                <h3>NEWEST BLOG</h3>
+                <div id="feed-list">
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="rightbar">
+            <div class="card">
+                <h3>TRENDING HASHTAGS</h3>
+                <div class="tag-suggestions">
+                    <span class="tag-chip" onclick="addCreateTag('#Reading')">#Reading</span>
+                    <span class="tag-chip" onclick="addCreateTag('#Book')">#Book</span>
+                    <span class="tag-chip" onclick="addCreateTag('#Inspiration')">#Inspiration</span>
+                </div>
+                <a href="#" class="see-more">SEE MORE</a>
+            </div>
+
+            <div class="card">
+                <h3>SUGGEST FRIENDS</h3>
+                <div class="friend-item">
+                    <div class="user-info">
+                        <div class="avatar" style="background-color: #FFD166;"></div>
+                        <div><strong>Olivia P.</strong><br><small>@Olivery</small></div>
+                    </div>
+                    <button class="follow-btn">FOLLOW</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="modal-overlay" id="create-post-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 style="text-align: center; width: 100%; font-family: 'Bungee';">CREATE POST</h2>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="create-post-user-area">
+                    <div class="user-avatar-medium" id="modal-user-avatar"></div>
+                    <div class="user-meta-col">
+                        <strong id="modal-user-name">Loading...</strong>
+
+                        <select id="post-privacy" class="privacy-select">
+                            <option value="public">🌎 Public</option>
+                            <option value="friends">👥 Friends</option>
+                            <option value="private">🔒 Private</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label class="input-label">Content</label>
+                <textarea id="post-content" placeholder="Share what you think now..."></textarea>
+
+                <label class="input-label">Tag</label>
+                <div class="tag-suggestions">
+                    <span class="tag-chip" onclick="addCreateTag('#Reading')">#Reading</span>
+                    <span class="tag-chip" onclick="addCreateTag('#Book')">#Book</span>
+                    <span class="tag-chip" onclick="addCreateTag('#Inspiration')">#Inspiration</span>
+                    <span class="tag-chip" onclick="addCreateTag('#Motivation')">#Motivation</span>
+                </div>
+
+                <div class="tag-input-row">
+                    <input type="text" id="custom-tag-input" placeholder="Add custom tag...">
+                    <button id="add-tag-btn">Add</button>
+                </div>
+
+                <div id="selected-tags-container"></div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="publish-btn">PUBLISH POST</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="post-detail-modal">
+        <div class="modal-box post-detail-box">
+            <div class="modal-header">
+                <h2>POST DETAIL</h2>
+                <button class="close-detail-btn">&times;</button>
+            </div>
+
+            <div id="detail-content-area"></div>
+
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div class="comment-list" id="detail-comment-list">
+                    <p>No comments yet.</p>
+                </div>
+                <div class="comment-input-row">
+                    <input type="text" placeholder="Write a comment..." id="new-comment-input">
+                    <button class="send-comment-btn" id="send-comment-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="blog.js"></script>
+</body>
+
+</html>

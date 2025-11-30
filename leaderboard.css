@@ -1,0 +1,70 @@
+/* --- Styles for leaderboard.css --- */
+
+/* (การ์ดหลัก) */
+.leaderboard-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.leaderboard-card h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #284062;
+    margin-bottom: 8px;
+}
+
+.leaderboard-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+/* (สไตล์ของ List) */
+.leaderboard-list {
+    list-style: none; /* (เราจะใช้ .rank แทนเลข 1. 2. 3.) */
+    padding: 0;
+    margin: 0;
+}
+
+/* (สไตล์ของ "แต่ละแถว") */
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+/* (สไตล์อันดับ) */
+.leaderboard-item .rank {
+    font-size: 18px;
+    font-weight: bold;
+    color: #888;
+    width: 40px; /* จัดที่ให้เลข */
+}
+
+/* (สไตล์ชื่อ) */
+.leaderboard-item .username {
+    font-size: 16px;
+    font-weight: 500;
+    color: #284062;
+    flex-grow: 1; /* (ยืดให้เต็ม) */
+    margin-left: 10px;
+}
+
+/* (สไตล์เวลา) */
+.leaderboard-item .time {
+    font-size: 16px;
+    font-weight: bold;
+    color: #284062;
+}
+
+/* (โบนัส: ไฮไลท์ Top 3) */
+.leaderboard-item.rank-1 .rank { color: #D4AF37; } /* Gold */
+.leaderboard-item.rank-2 .rank { color: #C0C0C0; } /* Silver */
+.leaderboard-item.rank-3 .rank { color: #CD7F32; } /* Bronze */

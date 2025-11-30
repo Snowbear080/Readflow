@@ -1,0 +1,277 @@
+/* --- Styles for book-detail.css --- */
+
+/* (Header) */
+.topbar-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.back-btn {
+    padding: 14px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-btn img {
+    width: 20px;
+    height: 20px;
+    align-items: center;
+}
+
+.detail-search {
+    flex-grow: 1;
+    padding: 14px 14px 14px 48px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* (ทำให้ Container เป็นจุดอ้างอิง) */
+.search-container {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+}
+
+/* (สไตล์กล่อง Suggestion) */
+.search-suggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100; /* (ให้ลอยอยู่บนสุด) */
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+/* (สไตล์รายการ) */
+.suggestion-item {
+    padding: 12px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left; /* (จัดชิดซ้าย) */
+}
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+.suggestion-item strong {
+    color: #284062;
+}
+.suggestion-item span {
+    color: #777;
+    font-size: 12px;
+}
+
+/* (Layout) */
+.book-detail-layout {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    align-items: flex-start; /* align to top */
+    /* reserve vertical space to avoid layout shift while images / fonts load */
+    min-height: clamp(340px, 36vw, 480px);
+}
+.detail-cover-col {
+    flex: 1; /* fixed column for cover so layout doesn't jump */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: clamp(180px, 22vw, 320px);
+    min-height: clamp(270px, 36vw, 420px);
+    overflow: hidden; /* clip any small image margins/borders */
+}
+.detail-info-col {
+    flex: 1.5; /* take remaining space */
+    min-width: 0; /* allow text to wrap */
+    display: flex;
+    flex-direction: column; /* stack content vertically */
+    margin-left: 40px;
+}
+
+/* (Cover Style) */
+.cover-bg-circle {
+    position: absolute;
+    /* responsive size only (keep position relative to cover) */
+    width: clamp(140px, 22vw, 400px);
+    height: clamp(140px, 22vw, 400px);
+    background: linear-gradient(105deg, #284062, #8EA2D7);
+    border-radius: 50%;
+    z-index: 1;
+}
+.book-cover-main {
+    width: clamp(180px, 20vw, 280px);
+    height: auto;
+    
+    display: block;
+    background-color: transparent; /* don't show white behind the image */
+    object-fit: cover; /* ensure the image fills the box and can be cropped if necessary */
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    z-index: 2; /* (อยู่บนวงกลม) */
+    position: relative;
+    padding: 0;
+    border: 0;
+    transition: transform 0.2s ease;
+}
+
+.book-cover-main:hover {
+    transform: scale(0.95);
+}
+
+/* (Info Column Styles) */
+
+.detail-info-col h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 36px;
+    color: #284062;
+    margin-bottom: 5px;
+}
+.detail-info-col .author {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+.genre-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.genre-tag {
+    background-color: #EDF0F4;
+    border: 2px solid #d0d6e0;
+    color: #284062;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 20px;
+    max-width: 500px;
+    white-space: pre-wrap; /* let it take available width */
+}
+
+.btn-container {
+    display: flex;
+    gap: 15px;
+}
+
+.add-to-book-btn {
+    background-color: #284062;
+    color: #fff;
+    font-family: 'Bungee';
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+    width: fit-content; /* don't stretch full width */
+}
+.add-to-book-btn:hover {
+    transform: scale(1.05);
+}
+
+.like-btn {
+    border: 2px solid #ddd;
+    cursor: pointer;
+    padding: 14px;
+    background-color: #fff;
+    border-radius: 8px;
+    height: fit-content;
+    transition: transform 0.2s ease;
+}
+.like-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.like-btn:hover {
+    border: 2px solid #284062;
+    transform: scale(1.05);
+}
+
+.info-box-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.info-box {
+    
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+.info-box span {
+    font-size: 12px;
+    color: #888;
+}
+.info-box strong {
+    display: block;
+    font-size: 16px;
+    color: #222;
+    margin-top: 4px;
+}
+.info-box strong.free {
+    color: #1a965d; /* (สีเขียว) */
+}
+
+/* Rating stars horizontal layout */
+#rating-box {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.rating-stars {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating-stars img {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* --- (Responsive) --- */
+@media (max-width: 992px) { /* (Tablet) */
+    .book-detail-layout {
+        flex-direction: column; /* (เรียงแนวตั้ง) */
+        align-items: center;
+        text-align: center;
+    }
+    .detail-info-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .genre-tags {
+        justify-content: center;
+    }
+    .info-box-container {
+        justify-content: center;
+    }
+}

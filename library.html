@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - ReadFlow</title>
+    
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="Sidebar/sidebar.css">
+</head>
+<body>
+   <div id="sidebar-placeholder"></div>
+
+   <main class="main">
+      <header class="header">
+        <div class="topbar">
+          <a href="library.html" class="back-btn" id="library-back-btn" style="display: none;">
+            <img src="icons/icon/arrow-left.svg" alt="Back"> 
+          </a>
+          <div class="search-container">
+          
+            <input type="text" id="search-input" placeholder="Search book, author, genre...">
+            <img src="icons/icon/search.svg" class="search-icon" alt="Search">
+
+            <div class="search-suggestions" id="search-suggestions">
+              </div>
+            </div>
+          
+            <select class="filter-dropdown">
+              <option value="all">Filter</option>
+              <option value="rating">By Rating</option>
+              <option value="price">By Price</option>
+            </select>
+            <button class="wishlist-btn" aria-label="Wishlist"><img src="icons/icon/heart.svg" alt=""></button>
+        </div>
+      </header>
+
+      <section class="book-section" id="search-results-section" style="display: none;">
+        <div class="section-header">
+          <h3 id="search-results-title">SEARCH RESULTS</h3>
+          <a href="#" id="clear-search-btn">Clear Search</a>
+        </div>
+        <div class="book-list" id="search-results-list">
+          </div>
+      </section>
+
+      <section class="category" id="category-section">
+        <div class="section-header">
+            <h2>CATEGORY</h2>
+            <a href="?view=AllCategories" id="all-category-link">All Category ></a>
+        </div>
+        <div class="category-tabs" id="category-tabs-container">
+          <button class="active" data-category="Popular" data-column="categories"><img src="icons/icon/Star.svg" alt=""> Popular</button>
+          <button data-category="Best Selling" data-column="categories"><img src="icons/icon/bestselling.svg" alt=""> Best Selling</button>
+          <button data-category="New Release" data-column="categories"><img src="icons/icon/new.svg" alt=""> New Release</button>
+          <button data-category="Romantic" data-column="genres"><img src="icons/icon/romantic.svg" alt=""> Romantic</button>
+          <button data-category="Fantasy" data-column="genres"><img src="icons/icon/fantasy.svg" alt=""> Fantasy</button>
+          <button data-category="Horror" data-column="genres"><img src="icons/icon/ghost.svg" alt=""> Horror</button>
+          <button data-category="Sci-Fi" data-column="genres"><img src="icons/icon/sci.svg" alt=""> Sci-Fi</button>
+          <button data-category="Fiction" data-column="genres"><img src="icons/icon/fiction.svg" alt=""> Fiction</button>
+          <button data-category="Non Fiction" data-column="genres"><img src="icons/icon/nonfiction.svg" alt=""> Non Fiction</button>
+          <button data-category="Thriller" data-column="genres"><img src="icons/icon/thriller.svg" alt=""> Thriller</button>
+          <button data-category="Historical" data-column="genres"><img src="icons/icon/historical.svg" alt=""> Historical</button>
+          <button data-category="Adventure" data-column="genres"><img src="icons/icon/adventure.svg" alt=""> Adventure</button>
+          <button data-category="Drama" data-column="genres"><img src="icons/icon/drama.svg" alt=""> Drama</button>
+          <button data-category="Biography" data-column="genres"><img src="icons/icon/biography.svg" alt=""> Biography</button>
+          <button data-category="Mindset" data-column="genres"><img src="icons/icon/mindset.svg" alt=""> Mindset</button>
+        </div>
+      </section>
+
+      <section class="book-section" id="popular-section">
+        <div class="section-header">
+          <h3 id="main-section-title">POPULAR</h3>
+          <a href="?view=Popular" id="see-all-link">See All ></a>
+        </div>
+        <div class="book-list" id="popular-list">
+          <div class="book-card-placeholder">Loading...</div>
+        </div>
+      </section>
+
+      <section class="book-section" id="for-you-section">
+        <div class="section-header">
+          <h3>FOR YOU</h3>
+          <a href="?view=For You">See All ></a>
+        </div>
+        <div class="book-list for-you-list" id="for-you-list">
+          </div>
+      </section>
+
+      <section class="book-section" id="new-releases-section">
+        <div class="section-header">
+          <h3>NEW RELEASES</h3>
+          <a href="?view=New Release">See All ></a>
+        </div>
+        <div class="book-list" id="new-releases-list">
+          </div>
+      </section>
+
+      <section class="book-section" id="collection-section">
+        <div class="section-header">
+          <h3>COLLECTION</h3>
+          <a href="?view=Collection">See All ></a>
+        </div>
+        <div class="book-list" id="collection-list">
+           </div>
+      </section>
+      
+      <nav class="pagination">
+        <a href="#" class="page-link prev disabled">&lt;</a>
+        <a href="#" class="page-link active">1</a>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+        <span class="page-dots">...</span>
+        <a href="#" class="page-link">10</a>
+        <a href="#" class="page-link next">&gt;</a>
+      </nav>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="Sidebar/global.js" defer></script>
+    <script src="library.js"></script>
+</body>
+</html>
