@@ -1,0 +1,208 @@
+<div class="focus-mode-overlay" id="focus-mode-overlay">
+  <div class="focus-mode-modal">
+    
+    <div class="modal-header">
+      <button class="close-btn" id="focus-overlay-close-btn">&times;</button>
+      <h2>FOCUS MODE</h2>
+      <button class="start-read-btn" id="focus-overlay-start-btn">START FOCUS</button>
+    </div>
+    
+    <div class="timer-section">
+      <button class="timer-control-btn" id="timer-subtract">-</button>
+      <span class="timer-display" id="timer-display">25:00</span>
+      <button class="timer-control-btn" id="timer-add">+</button>
+    </div>
+
+    <div class="settings-container">
+      
+        <div class="setting-card">
+          <div class="card-header">
+            <h3>BOOK</h3>
+            
+          </div>
+          <div class="book-card-content">
+            <div class="book-cover-upload">
+                <div class="book-icon" id="focus-book-cover-preview"></div> 
+                <span>Cover</span>
+            </div>
+
+            <div class="book-inputs">
+                <select id="focus-book-select" style="padding: 12px; border-radius: 8px; border: 2px solid #9CA6B7;  width: 100%; font-family: 'Poppins';">
+                    <option value="">-- Select from My Books --</option>
+                </select>
+
+                <input type="text" id="focus-book-title" placeholder="Name">
+                <input type="text" id="focus-book-pages" placeholder="Total pages">
+
+                <div class="progress-input-container">
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-bar-fill" id="book-progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress-text-row">
+                        <span class="progress-info">
+                            <span id="focus-book-current">0</span>/<span id="display-total-pages">0</span> Pages
+                        </span>
+                        <span class="percentage-label" id="book-percentage">0%</span>
+                    </div>
+                </div>
+              
+                <input type="text" id="focus-book-goal" placeholder="Set goal (pages)">
+            </div>
+        </div>
+        </div>
+
+        <div class="setting-card">
+          <div class="card-header">
+            <h3>THEME</h3>
+            <a href="#" class="see-all-link">see all ></a>
+          </div>
+            <div class="theme-list">
+
+              <div class="theme-item active">
+                <div class="theme-info">
+                    <img src="icons/icon/bus-white.svg" class="theme-icon active-icon" alt="">
+                    <img src="icons/icon/bus-blue.svg" class="theme-icon inactive-icon" alt="">
+                    <span>Default</span>
+                </div>
+                <div class="theme-preview">
+                    <img src="Image/theme-preview-default.svg" alt="Preview"> 
+                </div>
+              </div>
+
+              <div class="theme-item">
+                <div class="theme-info">
+                  <img src="icons/icon/sun-white.svg" class="theme-icon active-icon" alt="">
+                  <img src="icons/icon/sun-blue.svg" class="theme-icon inactive-icon" alt="">
+                  <span>Day</span>
+                </div>
+                <div class="theme-preview">
+                  <img src="Image/theme-preview-default.svg" alt="Preview">
+                </div>  
+              </div>
+
+              <div class="theme-item">
+                <div class="theme-info">
+                  <img src="icons/icon/moon-white.svg" class="theme-icon active-icon" alt="">
+                  <img src="icons/icon/moon-blue.svg" class="theme-icon inactive-icon" alt="">
+                  <span>Night</span>
+                </div>
+                <div class="theme-preview">
+                  <img src="Image/theme-preview-default.svg" alt="Preview">
+                </div>  
+              </div>
+
+              <div class="theme-item">
+                <div class="theme-info">
+                  <img src="icons/icon/anime-white.svg" class="theme-icon active-icon" alt="">
+                  <img src="icons/icon/anime-blue.svg" class="theme-icon inactive-icon" alt="">
+                  <span>Anime</span>
+                </div>
+                <div class="theme-preview">
+                  <img src="Image/theme-preview-default.svg" alt="Preview">
+                </div>
+              </div>
+
+              <div class="theme-item">
+                <div class="theme-info">
+                  <img src="icons/icon/retro-white.svg" class="theme-icon active-icon" alt="">
+                  <img src="icons/icon/retro-blue.svg" class="theme-icon inactive-icon" alt="">
+                  <span>Retro</span>
+                </div>
+                <div class="theme-preview">
+                  <img src="Image/theme-preview-default.svg" alt="Preview">
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+      <div class="setting-card">
+        <div class="card-header">
+          <h3>SOUND</h3>
+          <a href="#" class="see-all-link">see all ></a>
+        </div>
+         <div class="sound-list">
+            
+            <div class="sound-item" data-audio="Sound/Quiet Mind.wav">
+                <div class="sound-icon-box">
+                    <img src="icons/icon/music-note.svg" class="static-icon" alt="">
+                    
+                    <div class="wave-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <span class="sound-name">Quiet Mind</span>
+                <img src="icons/icon/heart.svg" class="sound-fav" alt="">
+            </div>
+            
+
+            <div class="sound-item" data-audio="Sound/Midnight Windowlight.wav">
+                <div class="sound-icon-box">
+                    <img src="icons/icon/music-note.svg" class="static-icon" alt="">
+                    <div class="wave-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <span class="sound-name">Midnight Windowlight</span>
+                <img src="icons/icon/heart.svg" class="sound-fav" alt="">
+            </div>
+
+            <div class="sound-item" data-audio="Sound/Moonlit Keys.wav">
+                <div class="sound-icon-box">
+                    <img src="icons/icon/music-note.svg" class="static-icon" alt="">
+                    <div class="wave-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <span class="sound-name">Moonlit Keys</span>
+                <img src="icons/icon/heart.svg" class="sound-fav" alt="">
+            </div>
+
+             <div class="sound-item" data-audio="Sound/Night Breeze.wav">
+                <div class="sound-icon-box">
+                    <img src="icons/icon/music-note.svg" class="static-icon" alt="">
+                    <div class="wave-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <span class="sound-name">Night Breeze</span>
+                <img src="icons/icon/heart.svg" class="sound-fav" alt="">
+            </div>
+
+            <div class="sound-item" data-audio="Sound/Raindrops.wav">
+                <div class="sound-icon-box">
+                    <img src="icons/icon/music-note.svg" class="static-icon" alt="">
+                    <div class="wave-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <span class="sound-name">Raindrops</span>
+                <img src="icons/icon/heart.svg" class="sound-fav" alt="">
+            </div>
+
+            <div class="sound-item" data-audio="Sound/Late Night Fireplace.wav">
+                <div class="sound-icon-box">
+                    <img src="icons/icon/music-note.svg" class="static-icon" alt="">
+                    <div class="wave-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <span class="sound-name">Late Night Fireplace</span>
+                <img src="icons/icon/heart.svg" class="sound-fav" alt="">
+            </div>
+
+          </div>
+      </div>
+</div>

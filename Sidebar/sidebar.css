@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Bungee';
+    src: url('Bungee/Bungee-Regular.ttf'); 
+    font-weight: 700;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: fixed;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar h2 {
+  font-family: 'Bungee';
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #284062;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 16px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+  
+.nav-item img {
+  width: 42px;
+  height: 42px;
+}
+
+.nav-item span {
+  color: #284062;
+  transition: color 0.2s ease;
+}
+  
+.nav-item.active a{
+  background-color: #284062;
+  color: #ffffff;
+}
+
+.nav-item.active span {
+  color: #ffffff; /* ข้อความ Active */
+}
+  
+  /* Hover animation for non-active */
+.nav-item:not(.active) a:hover {
+  background-color: #E6E9EE;
+  transform: translateX(5px);
+}
